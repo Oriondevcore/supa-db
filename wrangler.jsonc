@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "supa-db",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "karaoke-db",
+          "database_id": "5ab5923b-8e75-48aa-935d-38387f185b0a"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "ca1698a45f26408ab85b151d86b66501",
+            "binding": "SECRET",
+            "secret_name": "cloudfare"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
